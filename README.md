@@ -75,12 +75,28 @@ populations.sumstats_summary.tsv
 populations.sumstats.tsv
 ```
 
-The second program we will be using for filtering is `plink`. 
+The second program we will be using for filtering is `plink` http://zzz.bwh.harvard.edu/plink/thresh.shtml. 'Plink' is a great program for analysis or filtering genotype by sequencing data. 
 
+Plink filtering:
+```
+--maf - Exclude variants with minor allele frequency lower than a threshold (default 0.01).
+--allow-extra-chr - Permit unrecognized chromosome codes.  The '0'
+--file - Specify .ped + .map filename prefix (default 'plink').
+--geno - Exclude variants with missing call frequencies greater than a threshold (default 0.1).  (Note that the default threshold is only applied if --geno is invoked without a parameter; when --geno is not invoked, no per-variant missing call frequency ceiling is enforced at all.  Other inclusion/exclusion default thresholds work the same way.)
+--recode A, count alleles named in the file.
+--out - Specify prefix for output files.
+```
 
+plink will read both the `.map` and `.ped` files if you input `.plink`. Make sure to give it the directory that both of these files are located in and ask the program to open a `.plink` file
 
+`plink --allow-extra-chr --file populations.plink --maf 0.03 --geno 0.15 --recodeA --out filtered`
 
-
+Output:
+```
+filtered.raw
+filtered.nosex
+filtered.log
+```
 
 
 
