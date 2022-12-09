@@ -98,8 +98,55 @@ filtered.nosex
 filtered.log
 ```
 
+## PCA analysis in R
+The following code will save plots in your current R directory. Some versions of R-Studio will not be able to save the plots this way, you may have to run the following code directly in R to get the output PDFs through this method.
+
+`library("adegenet")`
+
+Store the data as a genlight object:
+
+`filtered_data <-read.PLINK(file='filtered.raw')`
+
+PCA for large SNPs data sets that are stored as a genlight object:
+
+`SNP_PCA <- glPca(filtered_data, nf = 2)`
+
+Plot will be stored as pdf in current directory:
+
+`pdf(file = "Eigencalues.pdf")`
+
+Barplot showing eigenvalues:
+
+`barplot(SNP_PCA$eig, main="eigenvalues", col=heat.colors(length(SNP_PCA$eig)))`
+
+Closes the plot:
+
+`dev.off()`
+
+[PCA_plot.pdf](https://github.com/stairsb/PCA-pipline/files/10190697/PCA_plot.pdf)
 
 
+`library("ggplot2")`
 
+Formating the final data before plotting:
+
+```
+test <- SNP_PCA$scores |> data.frame()
+test2 <- pop(filtered_data)
+test$ecology <- test2
+```
+
+Store plot as pdf in current directory:
+
+`pdf(file = "PCA_plot.pdf")`
+
+Plotting the data:
+
+`ggplot(test, aes(x=PC1, y=PC2, fill = ecology)) +
+  geom_point(size = 3, shape = 21)`
+
+Closes the plot:
+
+`dev.off()`
 
 
