@@ -99,7 +99,7 @@ filtered.log
 ```
 
 ## PCA analysis in R
-The following code will save plots in your current R directory. Some versions of R-Studio will not be able to save the plots this way, you may have to run the following code directly in R to get the output PDFs through this method.
+The following code will save plots in your current R directory. Some versions of R-Studio will not be able to save the plots this way, you may have to run the following code directly in R to get the output PDFs through this method. You can create a png or jpeg insteads by replacing the code that says "pdf" by your prefered file type.
 
 `library("adegenet")`
 
