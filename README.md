@@ -123,7 +123,8 @@ Closes the plot:
 
 `dev.off()`
 
-![](Plots/Eigenvalues.pdf)
+![Eigenvalues](https://user-images.githubusercontent.com/111078377/206596020-8bdea38a-10d6-4588-9962-0d50a607b693.png)
+
 
 `library("ggplot2")`
 
@@ -148,4 +149,5 @@ Closes the plot:
 
 `dev.off()`
 
+![PCA_plot](https://user-images.githubusercontent.com/111078377/206596333-1be82136-baa8-4db8-a929-153d243559b0.png)
 
