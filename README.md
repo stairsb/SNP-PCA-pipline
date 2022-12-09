@@ -113,7 +113,7 @@ PCA for large SNPs data sets that are stored as a genlight object:
 
 Plot will be stored as pdf in current directory:
 
-`pdf(file = "Eigencalues.pdf")`
+`pdf(file = "Eigenvalues.pdf")`
 
 Barplot showing eigenvalues:
 
@@ -123,8 +123,7 @@ Closes the plot:
 
 `dev.off()`
 
-[PCA_plot.pdf](https://github.com/stairsb/PCA-pipline/files/10190697/PCA_plot.pdf)
-
+![](Plots/Eigenvalues.pdf)
 
 `library("ggplot2")`
 
